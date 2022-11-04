@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
+/*Scema for your Students Document in your MongoDB Collection */
 const studentSchema = new mongoose.Schema({
     name: {
         type:String,
@@ -9,7 +10,7 @@ const studentSchema = new mongoose.Schema({
     },
     email: {
         type:String,
-        unique: [true,"Email id already Exists"],
+        unique: [true,"Email address already exists"],
         required: true,
         validate(value){
             if (!validator.isEmail(value)){
